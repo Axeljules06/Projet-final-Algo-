@@ -1,6 +1,6 @@
 
 
-class client:
+class Client:
     def __init__(self, nom, date_naiss, num_tel, facture):
         self.nom = nom
         self.date_naiss = date_naiss
@@ -9,34 +9,34 @@ class client:
         
         
         
-class cdr:
+class Cdr:
     def __init__(self, filename):
         self.filename = filename
         self.liste = []
         self.resultat = []
         self.num = 0
         
-    def _open(self):
+    def _Open(self):
         file = open(self.filename, "r")
         for ligne in file:
             self.liste.append(ligne.strip())
-        self.pile_dict()
+        self.Pile_dict()
         
         self.num = self.resultat[0]["appelant"]
         
-    def pile_dict(self):
+    def Pile_dict(self):
         a = []
         b = ["identifiant de l'appel", 'type call', ' date et heure','appelant', 'appelé', 'durée', 'taxe', 'total volume']
         for i in self.liste:
             a = i.split('|')
             self.resultat.append(dict(zip(b, a)))
             
-class facture:
+class Facture:
     def __init__(self,liste_dict):
         self.liste_dict = liste_dict
         self.prix = 0
     
-    def definition(self):
+    def Definition(self):
         for i in self.liste_dict:
             type_call = float(i['type call'])
             num2 = i['appelé']
@@ -67,7 +67,7 @@ class facture:
         
             
                 
-class statistique:
+class Statistique:
     def __init__(self, liste_dict):
         self.liste_dict = liste_dict
         self.nbr_appel = 0
