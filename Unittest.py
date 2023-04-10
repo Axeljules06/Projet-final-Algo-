@@ -2,7 +2,7 @@
 
 import unittest 
 
-from Progrmme_principale import *
+from Pro_princ_final import *
 class TestFacture(unittest.TestCase):
     def test_should_return_Solde(self):
         client = [{"identifiant de l'appel": '1447',
@@ -349,8 +349,8 @@ class TestFacture(unittest.TestCase):
   'durée': '0',
   'taxe': '2',
   'total volume': '0'}]
-        sut = facture(client)
-        sut.definition()
+        sut = Facture(client)
+        sut.Definition()
         
         expectedSolde = 155.85917
         self.assertEqual(expectedSolde, sut.prix)
