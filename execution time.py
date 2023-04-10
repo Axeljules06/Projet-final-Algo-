@@ -5,13 +5,13 @@ import time
 start = time.time()
 
 
-cdr1 = cdr("tp_algo.txt")
-cdr1._open()
-facture1 = facture(cdr1.resultat)
-facture1.definition()
+cdr1 = Cdr("Text_algo(information).txt")
+cdr1._Open()
+facture1 = Facture(cdr1.resultat)
+facture1.Definition()
 
 
-statistique1 = statistique(cdr1.resultat)
+statistique1 = Statistique(cdr1.resultat)
 statistique1.stat()
 
 
